@@ -5,7 +5,7 @@
 Game::Game() {
 }
 
-void Game::init_game() {
+void Game::main_game() {
     this->state = GameState();
     this->enemy.clear();
     deleteList(this->player_cards);
@@ -125,7 +125,7 @@ void Game::init_round(bool newEnemy) {
 void Game::lost() {
     state.updateHighScore("highscore.txt");
     lose();
-    init_game();
+    main_game();
 }
 
 void Game::won() {
@@ -133,7 +133,7 @@ void Game::won() {
     char instruction = completeAllLevel();
     while(true) {
         if(instruction == 'm' || instruction == 'M') {
-            init_game();
+            main_game();
             return;
         } else if(instruction == 'c' || instruction == 'C') {
             print(this->player_cards);
@@ -142,8 +142,4 @@ void Game::won() {
         }
         instruction = completeAllLevel();
     }
-}
-
-void Game::main_game() {
-    init_game();
 }
