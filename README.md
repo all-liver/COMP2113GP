@@ -19,6 +19,8 @@ Welcome to the Tower of Doom, where you have to fend off attacks from varied ene
 
 ## Project Structure
 //Below is the part describing the card drawing algorithm. And this comment serves for internal communication.
+
+
 To make difficulty more significant to the gameplay, we modelled the card drawing mechanism to draw cards based on the poisson distribution. When the difficulty is higher, the parameter will decrease so that the more common cards will have a greater odd to be drawn.
 
 ## Build and Run
